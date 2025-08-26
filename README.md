@@ -1,2 +1,2 @@
 # curriculum
-Proyecto para hoja de vida
+Proyecto para hoja de vida.

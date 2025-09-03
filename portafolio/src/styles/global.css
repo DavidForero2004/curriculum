@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: black;
+  overflow: hidden;
 }
 
 .antialiased {
@@ -52,4 +53,12 @@ body {
   width: 8em;
   height: 3em;
   font-weight: 500;
+  transition-duration: 1s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#btn-shape:hover {
+  scale: 1.1;
+  box-shadow: 0 0 10px white;
 }

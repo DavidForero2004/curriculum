@@ -1,3 +1,5 @@
-export default function PageDev0(){
-    return <p style={{ color: 'white' }}>Hola, esta es la página de dev0</p>   
+import LoaderDev0 from "@/components/loaders/dev0";
+
+export default function PageDev0() {
+  return <h1>hola</h1>
 }

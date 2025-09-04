@@ -1,0 +1,133 @@
+/*estilos para pantallas grandes 1500px*/
+
+.banner-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(16, 16, 99, 1) 0%,
+    rgba(38, 48, 98, 1) 29%,
+    rgba(46, 59, 97, 1) 64%,
+    rgba(62, 121, 158, 1) 100%
+  );
+  background-size: 200% 200%;
+  color: white;
+  text-align: center;
+  transition: background-position 1s ease;
+}
+
+.banner-intro:hover {
+  background-position: 80% 20%; /* mueve el gradiente al hacer hover */
+}
+
+.banner-title {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.banner-occupation {
+  font-size: 2rem;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.banner-title {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.banner-occupation {
+  font-size: 2rem;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+.scroll-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: absolute;
+  bottom: 50;
+}
+
+.nav-links {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style: none;
+  right: 1%;
+  top: 50%;
+  gap: 10px;
+}
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.text-span {
+  display: none;
+}
+
+.circle-span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 5px;
+}
+
+.banner-about {
+  background-color: #1b1b1b;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.text-about {
+  padding: 40px;
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* Texto alineado a la izquierda */
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8;          /* Espaciado entre líneas */
+  max-width: 700px;          /* Evita que el texto sea demasiado ancho */
+}
+
+.text-about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;       /* Espacio debajo del título */
+  font-weight: bold;
+  color: #f8fbfc;            /* Azul elegante para destacar */
+}
+
+.text-about p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;       /* Espacio entre párrafos */
+  text-align: justify;       /* Texto justificado para un look más pro */
+  color: #e0e0e0;            /* Gris claro para contraste más suave */
+}
+
+.image-about {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*animations*/

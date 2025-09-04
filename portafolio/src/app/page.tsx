@@ -18,7 +18,7 @@ export default function Home() {
     setTimeout(() => {
       setLoading(true);
       router.push(routes[1].href); //  ruta del botón dev0
-    }, 2500);
+    }, 1200);
   };
 
   return (

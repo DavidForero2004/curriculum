@@ -1,16 +1,19 @@
 import "../styles/global.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import Script from "next/script";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        {/* 👇 Aquí se renderiza la página actual */}
-        {children}
-      </body>
+    <html lang="es">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8163540274916215"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

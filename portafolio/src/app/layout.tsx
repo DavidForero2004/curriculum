@@ -1,4 +1,5 @@
 import "../styles/global.css";
+import ConsentBanner from "@/components/ConsentBanner";
 
 export default function RootLayout({
   children,
@@ -11,6 +12,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-8163540274916215"></meta>  
       </head>
       <body>{children}</body>
+      <ConsentBanner />
     </html>
   );
 }

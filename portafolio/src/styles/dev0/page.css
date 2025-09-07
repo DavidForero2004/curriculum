@@ -9,7 +9,7 @@
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 0%,
-    rgba(10, 24, 74, 1) 29%,
+    rgba(0, 69, 110, 1) 29%,
     rgba(29, 29, 115, 1) 64%,
     rgba(0, 69, 110, 1) 100%
   );
@@ -101,8 +101,6 @@ p {
   opacity: 1;
   z-index: 99999;
 }
-
-
 
 .banner-about {
   background-color: #111;
@@ -237,7 +235,7 @@ p {
 .skill-card:hover {
   color: #00c2ff;
   transform: translateX(5px);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .banner-experience {
@@ -297,7 +295,7 @@ p {
   top: 15px;
   right: -20px;
   z-index: 1;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .timeline-item.right .timeline-icon {
@@ -309,7 +307,7 @@ p {
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  margin: 20px ;
+  margin: 20px;
 }
 
 .timeline-content h3 {
@@ -378,7 +376,64 @@ p {
   margin: 0;
 }
 
+.download-cv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(0, 69, 110, 1);
+  margin: 0;
+  height: 10em;
+}
 
+.file {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-cv .file a {
+  position: relative; /* necesario para que los hijos absolutos se centren */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+/* Texto */
+.download-cv .file h1 {
+  position: absolute;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icono */
+.download-cv .file #download-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.download-cv .file:hover h1 {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.download-cv .file:hover #download-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /*animations*/

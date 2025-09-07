@@ -16,6 +16,7 @@ import {
   FaLightbulb,
   FaBriefcase,
   FaGraduationCap,
+  FaDownload,
 } from "react-icons/fa";
 import {
   SiSharp,
@@ -29,10 +30,8 @@ import {
 } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
 
-
-
 export default function Dev0Page() {
-   const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
@@ -333,7 +332,19 @@ export default function Dev0Page() {
           </div>
         </div>
       </section>
-
+      <section className="download-cv">
+        <div className="file">
+          <a href="/api/curriculum" download>
+            <h1 className={inter.className}>Descargar archivo</h1>
+            <span id="download-icon">
+              <FaDownload />
+            </span>
+          </a>
+        </div>
+      </section>
+      <section className="spacer-section">
+        
+      </section>
       <FooterDev0 />
     </div>
   );

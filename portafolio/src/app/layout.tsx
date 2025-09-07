@@ -9,10 +9,15 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-8163540274916215"></meta>  
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-8163540274916215"
+        ></meta>
       </head>
-      <body>{children}</body>
-      <ConsentBanner />
+      <body>
+        {children}
+        <ConsentBanner />
+      </body>
     </html>
   );
 }

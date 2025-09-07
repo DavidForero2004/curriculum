@@ -1,5 +1,3 @@
-/*estilos para pantallas grandes 1500px*/
-
 .banner-intro {
   display: flex;
   flex-direction: column;
@@ -14,13 +12,17 @@
     rgba(0, 69, 110, 1) 100%
   );
   background-size: 200% 200%;
+  background-position: 0% 50%; /* posición inicial */
   color: white;
   text-align: center;
-  transition: background-position 1s ease;
+
+  /* 🔹 transición definida SOLO aquí */
+  transition:2s ease-in-out;
 }
 
 .banner-intro:hover {
-  background-position: 80% 20%; /* mueve el gradiente al hacer hover */
+  background-position: 80% 20%; /* posición final */
+  transition: 2s ease-in-out;
 }
 
 .banner-title {
@@ -61,6 +63,8 @@ p {
   bottom: 50;
 }
 
+
+/* 🔹 NAV LINKS */
 .nav-links {
   position: fixed;
   display: flex;
@@ -71,18 +75,60 @@ p {
   top: 50%;
   gap: 10px;
   z-index: 9999;
-}
-.nav-item a {
-  color: white;
-  text-decoration: none;
+  transition: opacity 0.4s ease;
 }
 
-/* Por defecto el texto está oculto */
+.nav-links.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px); /* un pequeño desplazamiento hacia abajo */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.nav-links.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* vuelve a su lugar */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  gap: 8px;
+}
+
+/* Texto oculto por defecto */
 .text-span {
   opacity: 0;
-  z-index: 99999;
-  color: white;
+  transform: translateX(-5px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  font-size: 14px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Hover muestra el texto */
+.nav-item:hover .text-span {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Click (activo) mantiene el texto visible */
+.text-span.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  pointer-events: auto;
 }
 
 /* El círculo */
@@ -91,16 +137,15 @@ p {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #00bfff;
+  background: #ffffff;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Cuando hago hover en el círculo, se muestra el texto */
-.circle-span:hover ~ .text-span,
-.circle-span:hover + .text-span {
-  opacity: 1;
-  z-index: 99999;
+.circle-span:hover {
+  transform: scale(1.2);
 }
+
 
 .banner-about {
   background-color: #111;
@@ -485,6 +530,123 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
+.carousel-container {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin: 40px auto;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  gap: 20px;
+}
+.projects-title{
+  margin-top: 35px;
+  font-size: 3em;
+color: whitesmoke;
+text-align: center;
+}
+
+.project-card {
+  flex: 0 0 calc((100% - 50px) / 3); /* 3 visibles, con gap de 20px */
+
+  background: linear-gradient(135deg, #00456e, #00456e); /* Azul degradado */
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.25);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Animación hover */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 114, 255, 0.4);
+}
+
+/* Animación decorativa (borde brillante) */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 20%, transparent 60%);
+  transform: rotate(25deg);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Títulos */
+.project-card h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Descripciones */
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-buttons button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #00456e;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-buttons button:hover {
+  background: #005fd1;
+  box-shadow: 0 0 8px 10px #005ed185;
+
+  transform: scale(1.1);
+}
+
+/* Animación de aparición con scroll */
+.fade-section {
+  opacity: 0.35;
+  transform: translateY(0);
+   transition: opacity 0.3s linear, transform 0.3s linear;
+}
+
+.visible-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition:  0.1s ;
+}
+
 
 
 /*animations*/

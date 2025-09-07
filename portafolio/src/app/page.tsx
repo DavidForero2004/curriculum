@@ -22,7 +22,7 @@ export default function Home() {
   };
 
   return (
-    <div className="main-container">
+    <div className="main-container background">
       <div className="title">
         <h1 className={inter.className}>Portafolio</h1>
       </div>
@@ -38,7 +38,7 @@ export default function Home() {
           />
           {loading && <LoaderDev0 />}
         </>
-        
+
         {/*botones normales sin loader */}
         <Button
           text="dev1"
@@ -59,6 +59,15 @@ export default function Home() {
           href={routes[4].href}
         />
       </div>
+
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
+      <span id="span"></span>
     </div>
   );
 }

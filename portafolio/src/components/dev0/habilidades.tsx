@@ -22,7 +22,6 @@ import {
   FaWrench,
   FaLightbulb,
 } from "react-icons/fa";
-import { MdSecurity } from "react-icons/md";
 
 export default function Habilidades() {
   return (
@@ -96,7 +95,7 @@ export default function Habilidades() {
           </h3>
           <div className="skills-grid">
             <div className="skill-card">
-              <MdSecurity /> <span>Prácticas de Seguridad</span>
+             <span>Prácticas de Seguridad</span>
             </div>
             <div className="skill-card">
               <span>API</span>

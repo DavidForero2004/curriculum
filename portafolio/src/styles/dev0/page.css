@@ -17,7 +17,7 @@
   text-align: center;
 
   /* 🔹 transición definida SOLO aquí */
-  transition:2s ease-in-out;
+  transition: 2s ease-in-out;
 }
 
 .banner-intro:hover {
@@ -60,9 +60,8 @@ p {
   justify-content: center;
   font-weight: bold;
   position: absolute;
-  bottom: 50;
+  bottom: 1px;
 }
-
 
 /* 🔹 NAV LINKS */
 .nav-links {
@@ -145,7 +144,6 @@ p {
 .circle-span:hover {
   transform: scale(1.2);
 }
-
 
 .banner-about {
   background-color: #111;
@@ -438,7 +436,7 @@ p {
   border-radius: 12px;
   text-align: center;
   max-width: 300px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   animation: pop-in 0.3s ease-out;
 }
 
@@ -467,10 +465,15 @@ p {
 }
 
 @keyframes pop-in {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-
 
 .download-cv {
   position: relative;
@@ -531,122 +534,255 @@ p {
   transform: translateY(0);
 }
 
-.carousel-container {
-  width: 80%;
-  overflow: hidden;
-  position: relative;
-  margin: 40px auto;
-  padding: 20px 0;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  gap: 20px;
-}
-.projects-title{
-  margin-top: 35px;
-  font-size: 3em;
-color: whitesmoke;
-text-align: center;
-}
-
-.project-card {
-  flex: 0 0 calc((100% - 50px) / 3); /* 3 visibles, con gap de 20px */
-
-  background: linear-gradient(135deg, #00456e, #00456e); /* Azul degradado */
-  color: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-sizing: border-box;
-  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.25);
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* ✨ Animación hover */
-.project-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 114, 255, 0.4);
-}
-
-/* Animación decorativa (borde brillante) */
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 20%, transparent 60%);
-  transform: rotate(25deg);
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
-
-/* Títulos */
-.project-card h3 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Descripciones */
-.project-card p {
-  font-size: 1rem;
-  line-height: 1.4;
-  opacity: 0.9;
-}
-
-.carousel-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.carousel-buttons button {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  background: #00456e;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-buttons button:hover {
-  background: #005fd1;
-  box-shadow: 0 0 8px 10px #005ed185;
-
-  transform: scale(1.1);
-}
-
 /* Animación de aparición con scroll */
 .fade-section {
   opacity: 0.35;
   transform: translateY(0);
-   transition: opacity 0.3s linear, transform 0.3s linear;
+  transition: opacity 0.3s linear, transform 0.3s linear;
 }
 
 .visible-section {
   opacity: 1;
   transform: translateY(0);
-  transition:  0.1s ;
+  transition: 0.1s;
 }
 
+/* ===================== */
+/* CARRUSEL RESPONSIVE   */
+/* ===================== */
 
+.carousel-container {
+  width: 95%;
+  overflow: hidden;
+  position: relative;
+  margin: 30px auto;
+  padding: 10px 0;
+}
 
-/*animations*/
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.project-card {
+  flex: 0 0 auto;
+  background: linear-gradient(135deg, #00456e, #00456e);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.25);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.35);
+}
+
+/* Botones */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.carousel-buttons button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #00456e;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 114, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-buttons button:hover {
+  background: #005fd1;
+  transform: scale(1.1);
+}
+
+/** MOBILE **/
+@media (min-width: 320px) and (max-width: 768px) {
+  .banner-about {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+  .image-about {
+    display: none;
+  }
+  #name {
+    font-size: 32px;
+  }
+  #occupation {
+    font-size: 14px;
+  }
+  .text-about {
+    padding: 15px;
+  }
+  .text-about h1,
+  .skills-title,
+  .experience-title {
+    font-size: 18px;
+    text-decoration: dashed;
+    margin-bottom: 10px;
+    text-align: start;
+  }
+  .skills-title::after {
+    margin: 10px 0 0 0;
+  }
+  .text-about p {
+    font-size: 14px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .banner-skills {
+    padding: 15px;
+  }
+  .container-dev {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .skills-category h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .skills-grid {
+    gap: 8px;
+  }
+  .skill-card {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+  .skills-category:nth-child(1),
+  .skills-category:nth-child(2) {
+    min-width: 35%;
+    width: 35%;
+  }
+  .skills-category:nth-child(3) {
+    margin-top: 10px;
+    min-width: 100%;
+    width: 100%;
+  }
+  .banner-experience {
+    padding: 10px;
+  }
+  .experience-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-decoration: solid;
+  }
+  .timeline-content {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+  .timeline-content h3 {
+    font-size: 16px;
+  }
+  .timeline-content h4 {
+    font-size: 14px;
+    color: #979797;
+  }
+  .timeline-content span {
+    font-size: 12px;
+  }
+  .timeline-content p {
+    font-size: 12px;
+  }
+  .timeline-item {
+    width: 90%;
+    position: auto;
+    margin-bottom: 10px;
+  }
+  .timeline-item.right {
+    left: 0;
+  }
+  .timeline-icon {
+    display: none;
+  }
+  .timeline::after {
+    background-color: transparent;
+  }
+  .download-cv {
+    height: 3em;
+  }
+  .file h1 {
+    font-size: 16px;
+  }
+  .download-cv .file #download-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+  .carousel-container {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .carousel-track {
+    gap: 12px;
+  }
+
+  .project-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .projects-title {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .project-card h3 {
+    font-size: 14px;
+  }
+
+  .project-card p {
+    font-size: 12px;
+  }
+
+  .carousel-buttons {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .carousel-buttons button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .footer-dev0 {
+    padding: 30px;
+    height: 1em;
+  }
+  .footer-dev0 p {
+    font-size: 10px;
+    margin: 5px;
+}
+
+.footer-icons {
+    margin-bottom: 0px;
+}
+
+.footer-icons a {
+    font-size: 16px;
+}
+}

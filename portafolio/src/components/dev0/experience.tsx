@@ -9,7 +9,7 @@ export default function Experience() {
   return (
    
  <section className="banner-experience fade-section" id="experience-section">
-        <h2 className="experience-title">Experiencia</h2>
+        <h2 className="experience-title">Experiencia / Formación</h2>
         <div className="timeline">
           {/* Item 1 */}
           <div className="timeline-item right">

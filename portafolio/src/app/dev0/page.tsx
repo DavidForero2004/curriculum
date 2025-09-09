@@ -67,7 +67,7 @@ export default function Dev0Page() {
       <Navs showNav={showNav} />
 
       {/* Introducción */}
-      <Introduccion />
+      <Introduccion showNav={true} />
 
       {/* Sobre mí */}
       <SobreMi />

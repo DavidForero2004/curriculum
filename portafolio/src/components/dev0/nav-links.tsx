@@ -91,7 +91,21 @@ export default function Navs({ showNav }: NavsProps) {
           <span className="circle-span"></span>
         </a>
       </li>
-
+      <li className="nav-item">
+        <a
+          className={inter.className}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("download-cv");
+            setActiveLabel("cv");
+          }}
+        >
+          <span className={`text-span ${activeLabel === "cv" ? "active" : ""}`}>
+            Descargar Curriculum
+          </span>
+          <span className="circle-span"></span>
+        </a>
+      </li>
       <li className="nav-item">
         <a
           className={inter.className}
@@ -117,32 +131,12 @@ export default function Navs({ showNav }: NavsProps) {
           className={inter.className}
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection("download-cv");
-            setActiveLabel("cv");
-          }}
-        >
-          <span
-            className={`text-span ${activeLabel === "cv" ? "active" : ""}`}
-          >
-            Descargar Curriculum
-          </span>
-          <span className="circle-span"></span>
-        </a>
-      </li>
-
-      <li className="nav-item">
-        <a
-          className={inter.className}
-          onClick={(e) => {
-            e.preventDefault();
             scrollToSection("footer-dev0");
             setActiveLabel("contact");
           }}
         >
           <span
-            className={`text-span ${
-              activeLabel === "contact" ? "active" : ""
-            }`}
+            className={`text-span ${activeLabel === "contact" ? "active" : ""}`}
           >
             Contacto
           </span>

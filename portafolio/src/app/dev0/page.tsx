@@ -9,6 +9,7 @@ import Introduccion from "@/components/dev0/introduccion";
 import Projects from "@/components/dev0/projects";
 import Cv from "@/components/dev0/curriculum";
 import Experience from "@/components/dev0/experience";
+import HamburgerMenu from "@/components/dev0/hamburgerMenu";
 
 export default function Dev0Page() {
   // estado para mostrar/ocultar la navegación
@@ -63,6 +64,7 @@ export default function Dev0Page() {
 
   return (
     <div className="main-banner">
+       <HamburgerMenu />
       {/* Navegación */}
       <Navs showNav={showNav} />
 

@@ -1,6 +1,6 @@
 import { playfairDisplay, poppins, inter } from "../../../public/fonts/font";
 import { useState } from "react";
-/*import HamburgerMenu from "./hamburgerMenu";*/
+
 
 type NavsProps = {
   showNav: boolean;
@@ -15,13 +15,13 @@ export default function Introduccion({showNav}: NavsProps) {
 
   const [activeLabel, setActiveLabel] = useState<string | null>(null);
 
-  const david = activeLabel;
 
 
 
   return (
+    
     <section className="banner-intro fade-section" id="intro-section">
-      {/*<HamburgerMenu />*/ david}
+     
       <div className="banner-container">
         <div className="banner-title">
           <p id="name" className={playfairDisplay.className}>

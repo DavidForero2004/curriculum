@@ -22,12 +22,12 @@
 a {
   color: white;
   text-decoration: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 a:hover {
   color: #00ffff;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 .banner-intro:hover {
   background-position: 80% 20%; /* posición final */
@@ -69,7 +69,7 @@ p {
   justify-content: center;
   font-weight: bold;
   position: absolute;
-  bottom: 25px;
+  bottom: 60px;
 }
 
 /* 🔹 NAV LINKS */
@@ -619,12 +619,63 @@ p {
   background: #005fd1;
   transform: scale(1.1);
 }
-a:hover{
+a:hover {
   cursor: pointer;
 }
 
 /** MOBILE **/
 @media (min-width: 320px) and (max-width: 767px) {
+  .hamburger-containerH {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: #111;
+    opacity: 0.9;
+  }
+
+  .options-hamburgerH {
+    display: block;
+    background-color: #111;
+    width: 100%;
+    height: 6em;
+    z-index: 100000;
+  }
+
+  .icon-hamburger {
+    display: block;
+    position: fixed;
+    z-index: 9;
+    left: 15px;
+    top: 15px;
+    display: flex;
+    align-items: end;
+  }
+  .ul {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 80%;
+    padding: 50px 10px 0px;
+  }
+  ul {
+    gap: 5px;
+  }
+  .li {
+    text-align: start;
+    padding-inline-start: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .iconFa {
+    z-index: 999999;
+    color: white;
+    font-size: 1.5em;
+  }
+
   .banner-about {
     flex-direction: column;
     height: auto;
@@ -786,7 +837,7 @@ a:hover{
     height: 1em;
   }
   .footer-dev0 p {
-    font-size: 10px;
+    font-size: 13px;
     margin: 5px;
   }
 
@@ -795,11 +846,19 @@ a:hover{
   }
 
   .footer-icons a {
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 18px;
   }
 }
 /** TABLET **/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hamburger-container,
+  .options-hamburger,
+  .icon-hamburger,
+  .hamburger-containerH,
+  .options-hamburgerH {
+    display: none !important;
+  }
   .main-banner {
     overflow: hidden;
   }
@@ -871,5 +930,14 @@ a:hover{
   }
   .footer-icons a {
     font-size: 2rem;
+  }
+}
+@media (min-width: 1025px) {
+  .hamburger-container,
+  .options-hamburger,
+  .icon-hamburger,
+  .hamburger-containerH,
+  .options-hamburgerH {
+    display: none !important;
   }
 }

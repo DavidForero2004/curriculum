@@ -4,19 +4,41 @@ interface Project {
   id: number;
   title: string;
   desc: string;
+  url: string; // nueva propiedad para redirigir
 }
 
 export default function Habilidades() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Gestor de Inventario",
-      desc: "Sistema para gestionar inventario...",
+      title: "API",
+      desc: "API para la gestion de parqueadero...",
+      url: "https://github.com/DavidForero2004/ApiPark",
     },
-    { id: 2, title: "Juego Pacman 2D", desc: "Juego educativo..." },
-    { id: 3, title: "CRUD Angular", desc: "Gestión de eventos..." },
-    { id: 4, title: "App Calculadora", desc: "Aplicación móvil..." },
-    { id: 5, title: "Portafolio Next.js", desc: "Este mismo portafolio..." },
+    {
+      id: 2,
+      title: "Juego Pacman 2D",
+      desc: "Juego educativo...",
+      url: "https://github.com/DavidForero2004/pacman-2d",
+    },
+    {
+      id: 3,
+      title: "CRUD Angular",
+      desc: "Gestión de eventos...",
+      url: "https://github.com/DavidForero2004/crud-angular",
+    },
+    {
+      id: 4,
+      title: "App Calculadora",
+      desc: "Aplicación móvil...",
+      url: "https://github.com/DavidForero2004/calculadora",
+    },
+    {
+      id: 5,
+      title: "Portafolio Next.js",
+      desc: "Este mismo portafolio...",
+      url: "https://github.com/DavidForero2004/portafolio-next",
+    },
   ];
 
   const visibleItems = 2; // tarjetas visibles a la vez
@@ -101,14 +123,17 @@ export default function Habilidades() {
           style={{ transform: `translateX(-${translateX}px)` }}
         >
           {projects.map((p) => (
-            <div
+            <a
               key={p.id}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="project-card"
               style={{ width: cardWidthPx ? `${cardWidthPx}px` : "auto" }}
             >
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
